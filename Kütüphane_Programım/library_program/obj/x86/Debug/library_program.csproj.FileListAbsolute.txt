@@ -1,0 +1,15 @@
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\bin\x86\Debug\library_program.exe.config
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\bin\x86\Debug\library_program.exe
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\bin\x86\Debug\library_program.pdb
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.csproj.AssemblyReference.cache
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.index.resources
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.Properties.Resources.resources
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.csproj.GenerateResource.cache
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.csproj.CoreCompileInputs.cache
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.exe
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.pdb
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.kitap_islemleri.resources
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.uye_islemleri.resources
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.kitapVer.resources
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.kitapAl.resources
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\x86\Debug\library_program.startPage.resources

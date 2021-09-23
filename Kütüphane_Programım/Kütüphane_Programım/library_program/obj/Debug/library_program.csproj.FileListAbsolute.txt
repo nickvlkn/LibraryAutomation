@@ -1,0 +1,10 @@
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\Debug\library_program.csproj.AssemblyReference.cache
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\Debug\library_program.index.resources
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\Debug\library_program.Properties.Resources.resources
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\Debug\library_program.csproj.GenerateResource.cache
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\Debug\library_program.csproj.CoreCompileInputs.cache
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\bin\Debug\library_program.exe.config
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\bin\Debug\library_program.exe
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\bin\Debug\library_program.pdb
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\Debug\library_program.exe
+C:\Users\yildi\Desktop\Kütüphane_Programım\library_program\obj\Debug\library_program.pdb

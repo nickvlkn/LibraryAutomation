@@ -1,0 +1,181 @@
+USE [master]
+GO
+/****** Object:  Database [library_database]    Script Date: 6.06.2021 15:17:03 ******/
+CREATE DATABASE [library_database]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'library_database', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\library_database.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'library_database_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\library_database_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [library_database] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [library_database].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [library_database] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [library_database] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [library_database] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [library_database] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [library_database] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [library_database] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [library_database] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [library_database] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [library_database] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [library_database] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [library_database] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [library_database] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [library_database] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [library_database] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [library_database] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [library_database] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [library_database] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [library_database] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [library_database] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [library_database] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [library_database] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [library_database] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [library_database] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [library_database] SET  MULTI_USER 
+GO
+ALTER DATABASE [library_database] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [library_database] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [library_database] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [library_database] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [library_database] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [library_database] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [library_database] SET QUERY_STORE = OFF
+GO
+USE [library_database]
+GO
+/****** Object:  Table [booksTable]    Script Date: 6.06.2021 15:17:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [booksTable](
+	[KitapNo] [int] IDENTITY(1,1) NOT NULL,
+	[KitapAd] [varchar](50) NULL,
+	[KitapYazari] [varchar](50) NULL,
+	[KitapYayinEvi] [varchar](50) NULL,
+	[KitapDurum] [varchar](50) NULL,
+ CONSTRAINT [PK_booksTable] PRIMARY KEY CLUSTERED 
+(
+	[KitapNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [membersTable]    Script Date: 6.06.2021 15:17:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [membersTable](
+	[UyeNo] [int] IDENTITY(1,1) NOT NULL,
+	[UyeTcNo] [varchar](50) NULL,
+	[UyeAd] [varchar](50) NULL,
+	[UyeSoyAd] [varchar](50) NULL,
+	[UyeTelefon] [varchar](50) NULL,
+	[UyeEposta] [varchar](50) NULL,
+ CONSTRAINT [PK_membersTable] PRIMARY KEY CLUSTERED 
+(
+	[UyeNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [transactionsTable]    Script Date: 6.06.2021 15:17:03 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [transactionsTable](
+	[islem_kitapNo] [varchar](50) NULL,
+	[islem_kitapAdi] [varchar](50) NULL,
+	[islem_kitapYazari] [varchar](50) NULL,
+	[islem_uyeNo] [varchar](50) NULL,
+	[islem_uyeTcNo] [varchar](50) NULL,
+	[islem_uyeAd] [varchar](50) NULL,
+	[islem_uyeTelefon] [varchar](50) NULL,
+	[islem_durum] [varchar](50) NOT NULL
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [booksTable] ON 
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (3, N'zalim dünya', N'Volkan Yıldız', N'hayattan bir parça yayınları', N'bos')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (5, N'Son Cüret', N'Yılmaz Ozdil', N'24 Kitap', N'bos')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (6, N'1984', N'george orwell', N'Can yayınları', N'dolu')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (7, N'Veba Geceleri', N'Orhan Pamuk', N'Can yayınları', N'bos')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (8, N'Körlük', N'Jose Saramango', N'Kitapyurdu', N'bos')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (9, N'Fareler Ve İnsanlar', N'John Steinbeck', N'Bilim Kitap', N'dolu')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (10, N'simyacı', N'Paulo Coelho', N'24 kitap', N'bos')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (11, N'6850', N'george orwell', N'Can yayınları', N'dolu')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (13, N'68505', N'george orwell', N'Can yayınları', N'bos')
+GO
+INSERT [booksTable] ([KitapNo], [KitapAd], [KitapYazari], [KitapYayinEvi], [KitapDurum]) VALUES (15, N'sadfasdf', N'sdfasdf', N'sadfsadf', N'bos')
+GO
+SET IDENTITY_INSERT [booksTable] OFF
+GO
+SET IDENTITY_INSERT [membersTable] ON 
+GO
+INSERT [membersTable] ([UyeNo], [UyeTcNo], [UyeAd], [UyeSoyAd], [UyeTelefon], [UyeEposta]) VALUES (8, N'22919343306', N'Mehmet', N'Bir', N'05426031101', N'mehmetbir@hotmail.com')
+GO
+INSERT [membersTable] ([UyeNo], [UyeTcNo], [UyeAd], [UyeSoyAd], [UyeTelefon], [UyeEposta]) VALUES (9, N'12345678987', N'Ayşe', N'Yaş', N'05413001102', N'ayse__yas@gmail.com')
+GO
+INSERT [membersTable] ([UyeNo], [UyeTcNo], [UyeAd], [UyeSoyAd], [UyeTelefon], [UyeEposta]) VALUES (10, N'12345678978', N'Arda', N'Akın', N'05426021145', N'aknArda@outlook.com')
+GO
+INSERT [membersTable] ([UyeNo], [UyeTcNo], [UyeAd], [UyeSoyAd], [UyeTelefon], [UyeEposta]) VALUES (11, N'12345670112', N'Volkan', N'güçlü', N'05426012541', N'vlknGuclu@hotmail.com')
+GO
+INSERT [membersTable] ([UyeNo], [UyeTcNo], [UyeAd], [UyeSoyAd], [UyeTelefon], [UyeEposta]) VALUES (12, N'12345654745', N'ali', N'Koç', N'05426014142', N'aliali_34@gmail.com')
+GO
+SET IDENTITY_INSERT [membersTable] OFF
+GO
+INSERT [transactionsTable] ([islem_kitapNo], [islem_kitapAdi], [islem_kitapYazari], [islem_uyeNo], [islem_uyeTcNo], [islem_uyeAd], [islem_uyeTelefon], [islem_durum]) VALUES (N'6', N'1984', N'george orwell', N'11', N'12345670112', N'Volkan', N'05426012541', N'dolu')
+GO
+INSERT [transactionsTable] ([islem_kitapNo], [islem_kitapAdi], [islem_kitapYazari], [islem_uyeNo], [islem_uyeTcNo], [islem_uyeAd], [islem_uyeTelefon], [islem_durum]) VALUES (N'9', N'Fareler Ve İnsanlar', NULL, N'12', N'12345654745', NULL, NULL, N'dolu')
+GO
+INSERT [transactionsTable] ([islem_kitapNo], [islem_kitapAdi], [islem_kitapYazari], [islem_uyeNo], [islem_uyeTcNo], [islem_uyeAd], [islem_uyeTelefon], [islem_durum]) VALUES (N'11', N'6850', NULL, N'11', N'12345670112', NULL, NULL, N'dolu')
+GO
+USE [master]
+GO
+ALTER DATABASE [library_database] SET  READ_WRITE 
+GO
